@@ -1,0 +1,36 @@
+.internship-section {
+  background-color: rgba(99, 102, 241, 0.03);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 6rem 0;
+}
+
+.internship-content {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.internship-desc {
+  font-size: 1.25rem;
+  color: var(--secondary);
+  line-height: 1.6;
+  margin-bottom: 3rem;
+}
+
+.internship-actions {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 480px) {
+  .internship-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+  .internship-actions .btn {
+    width: 100%;
+  }
+}

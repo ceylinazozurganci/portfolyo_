@@ -1,0 +1,190 @@
+/* 3D Cosmic Background Container */
+.cosmic-3d-wrapper {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -10;
+  pointer-events: none;
+  overflow: hidden;
+  perspective: 1200px;
+  background-color: #01040d;
+  user-select: none;
+}
+
+/* 4K Image Layer with Parallax & Depth */
+.cosmic-image-layer {
+  position: absolute;
+  inset: -6%;
+  width: 112%;
+  height: 112%;
+  will-change: transform;
+  transform-style: preserve-3d;
+  transition: transform 0.15s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+/* Darkened and atmospheric so it never blinds text */
+.cosmic-bg-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 18% 48%;
+  filter: saturate(1.1) contrast(1.15) brightness(0.5);
+  display: block;
+  transform: translateZ(0);
+}
+
+/* Deep Space High-Contrast Veil to Guarantee 100% Readability */
+.cosmic-ambient-overlay {
+  position: absolute;
+  inset: 0;
+  background: 
+    radial-gradient(circle at 18% 52%, rgba(0, 0, 0, 0.2) 0%, rgba(1, 4, 15, 0.75) 70%),
+    linear-gradient(180deg, rgba(1, 4, 15, 0.82) 0%, rgba(1, 4, 15, 0.55) 40%, rgba(1, 4, 15, 0.92) 100%),
+    linear-gradient(90deg, rgba(1, 4, 15, 0.75) 0%, rgba(1, 4, 15, 0.6) 40%, rgba(1, 4, 15, 0.9) 100%);
+  pointer-events: none;
+}
+
+/* 3D Celestial Hologram Anchor over the planet */
+.cosmic-sphere-anchor {
+  position: absolute;
+  left: 18%;
+  top: 52%;
+  width: 320px;
+  height: 320px;
+  margin-left: -160px;
+  margin-top: -160px;
+  transform-style: preserve-3d;
+  pointer-events: none;
+  will-change: transform;
+  transition: transform 0.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+  opacity: 0.75;
+}
+
+/* Core glow behind sphere */
+.cosmic-core-glow {
+  position: absolute;
+  inset: -20px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0, 240, 255, 0.25) 0%, rgba(56, 189, 248, 0.1) 50%, transparent 75%);
+  animation: cosmicPulse 4s ease-in-out infinite alternate;
+  filter: blur(18px);
+}
+
+/* Subtle lens flare beam */
+.cosmic-flare {
+  position: absolute;
+  top: 18%;
+  left: 68%;
+  width: 70px;
+  height: 70px;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.8) 0%, rgba(0, 240, 255, 0.4) 30%, transparent 70%);
+  border-radius: 50%;
+  filter: blur(4px);
+  animation: flareBlink 3s ease-in-out infinite;
+}
+
+/* 3D Gyro Rings */
+.gyro-ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 240, 255, 0.35);
+  box-shadow: 0 0 12px rgba(0, 240, 255, 0.25), inset 0 0 8px rgba(0, 240, 255, 0.15);
+}
+
+.gyro-ring-1 {
+  width: 320px;
+  height: 320px;
+  left: 0;
+  top: 0;
+  border-style: solid;
+  border-color: rgba(0, 240, 255, 0.45) transparent rgba(0, 240, 255, 0.15) transparent;
+  animation: rotateGyro1 16s linear infinite;
+}
+
+.gyro-ring-2 {
+  width: 370px;
+  height: 370px;
+  left: -25px;
+  top: -25px;
+  border-style: dashed;
+  border-width: 1.5px;
+  border-color: rgba(56, 189, 248, 0.35);
+  animation: rotateGyro2 24s linear infinite reverse;
+}
+
+.gyro-ring-3 {
+  width: 420px;
+  height: 420px;
+  left: -50px;
+  top: -50px;
+  border-style: dotted;
+  border-color: rgba(14, 165, 233, 0.4);
+  animation: rotateGyro3 30s linear infinite;
+}
+
+/* Canvas overlay for 3D stars */
+.cosmic-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  opacity: 0.85;
+}
+
+/* Subtle futuristic perspective grid floor */
+.cosmic-grid-horizon {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 220px;
+  background: linear-gradient(0deg, rgba(0, 240, 255, 0.03) 1px, transparent 1px),
+              linear-gradient(90deg, rgba(0, 240, 255, 0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+  mask-image: linear-gradient(to top, rgba(0,0,0,0.5) 0%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to top, rgba(0,0,0,0.5) 0%, transparent 100%);
+  transform: perspective(600px) rotateX(65deg);
+  transform-origin: bottom center;
+  opacity: 0.45;
+}
+
+/* Keyframe Animations */
+@keyframes rotateGyro1 {
+  0% { transform: rotateX(65deg) rotateY(15deg) rotateZ(0deg); }
+  100% { transform: rotateX(65deg) rotateY(15deg) rotateZ(360deg); }
+}
+
+@keyframes rotateGyro2 {
+  0% { transform: rotateX(-45deg) rotateY(55deg) rotateZ(0deg); }
+  100% { transform: rotateX(-45deg) rotateY(55deg) rotateZ(360deg); }
+}
+
+@keyframes rotateGyro3 {
+  0% { transform: rotateX(75deg) rotateY(-35deg) rotateZ(0deg); }
+  100% { transform: rotateX(75deg) rotateY(-35deg) rotateZ(360deg); }
+}
+
+@keyframes cosmicPulse {
+  0% { transform: scale(0.95); opacity: 0.6; }
+  100% { transform: scale(1.1); opacity: 0.9; }
+}
+
+@keyframes flareBlink {
+  0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.7; }
+  50% { transform: translate(-50%, -50%) scale(1.2); opacity: 0.95; }
+}
+
+@media (max-width: 992px) {
+  .cosmic-sphere-anchor {
+    left: 50%;
+    top: 40%;
+    transform: scale(0.8);
+  }
+  .cosmic-bg-img {
+    object-position: center 35%;
+  }
+}

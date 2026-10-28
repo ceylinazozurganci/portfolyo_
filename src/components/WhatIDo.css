@@ -1,0 +1,86 @@
+.what-i-do-section {
+  background-color: var(--bg-main);
+}
+
+.what-i-do-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.what-card {
+  background: var(--card-bg);
+  padding: 2rem;
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.what-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(99, 102, 241, 0.4);
+}
+
+.what-icon {
+  margin-bottom: 1.5rem;
+}
+
+.icon-shape {
+  width: 48px;
+  height: 48px;
+  background: linear-gradient(135deg, rgba(0, 240, 255, 0.2), rgba(0, 240, 255, 0.05));
+  border-radius: 12px;
+  position: relative;
+  border: 1px solid rgba(0, 240, 255, 0.4);
+  box-shadow: inset 0 2px 5px rgba(255, 255, 255, 0.2), 0 4px 10px rgba(0, 240, 255, 0.1);
+}
+
+.icon-shape::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20px;
+  height: 20px;
+  background: radial-gradient(circle at top left, #ffffff, var(--accent) 50%, #0088ff);
+  border-radius: 6px;
+  box-shadow: 0 0 10px rgba(0, 240, 255, 0.8), inset 0 -2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.what-title {
+  font-size: 1.25rem;
+  color: var(--primary);
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.what-desc {
+  color: var(--secondary);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+
+.what-techs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tech-badge {
+  font-size: 0.75rem;
+  font-family: var(--font-body);
+  background-color: var(--bg-main);
+  color: var(--secondary);
+  padding: 0.3rem 0.6rem;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  font-weight: 500;
+}

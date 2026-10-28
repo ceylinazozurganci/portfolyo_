@@ -1,0 +1,198 @@
+:root {
+  --bg-main: #020617;
+  --primary: #00F0FF;
+  --text-main: #FFFFFF;
+  --secondary: #E2E8F0;
+  --accent: #00F0FF;
+  --soft-accent: #38BDF8;
+  --card-bg: rgba(10, 18, 38, 0.92);
+  --border: rgba(56, 189, 248, 0.25);
+  
+  --font-heading: 'Space Grotesk', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  
+  --transition: all 0.25s ease;
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 8px 16px rgba(0, 0, 0, 0.5);
+  --shadow-lg: 0 16px 32px rgba(0, 0, 0, 0.6);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg-main);
+  color: #F1F5F9;
+  line-height: 1.65;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  color: #FFFFFF;
+  line-height: 1.25;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9);
+}
+
+p {
+  color: #E2E8F0;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.7);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: var(--transition);
+}
+
+button {
+  cursor: pointer;
+  font-family: var(--font-body);
+  transition: var(--transition);
+  border: none;
+  background: none;
+}
+
+/* Typography Utility */
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  letter-spacing: -0.02em;
+  color: #FFFFFF;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.95), 0 0 20px rgba(0, 240, 255, 0.3);
+}
+
+.section-subtitle {
+  font-size: 1.15rem;
+  color: #E2E8F0;
+  margin-bottom: 3rem;
+  max-width: 650px;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9);
+}
+
+/* Layout Utility */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+section {
+  padding: 5rem 0;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+/* Badges */
+.badge {
+  display: inline-block;
+  padding: 0.4rem 0.95rem;
+  background: rgba(10, 22, 45, 0.9);
+  color: #00F0FF;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
+  border: 1px solid rgba(0, 240, 255, 0.5);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.6), 0 0 10px rgba(0, 240, 255, 0.2);
+}
+
+/* CTA Buttons with Maximum Clarity */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.85rem 1.75rem;
+  font-weight: 600;
+  border-radius: 0.6rem;
+  text-decoration: none;
+  transition: var(--transition);
+  font-size: 1rem;
+  letter-spacing: 0.02em;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #00F0FF 0%, #0284C7 100%);
+  color: #020617;
+  font-weight: 700;
+  box-shadow: 0 4px 20px rgba(0, 240, 255, 0.4), 0 2px 8px rgba(0, 0, 0, 0.5);
+  border: 1px solid #00F0FF;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #38BDF8 0%, #00F0FF 100%);
+  box-shadow: 0 6px 25px rgba(0, 240, 255, 0.6), 0 4px 12px rgba(0, 0, 0, 0.6);
+  transform: translateY(-2px);
+  color: #020617;
+}
+
+.btn-outline {
+  border: 1.5px solid rgba(0, 240, 255, 0.7);
+  background: rgba(10, 18, 38, 0.85);
+  color: #FFFFFF;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  font-weight: 600;
+}
+
+.btn-outline:hover {
+  background: rgba(0, 240, 255, 0.15);
+  border-color: #00F0FF;
+  color: #00F0FF;
+  box-shadow: 0 6px 20px rgba(0, 240, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  border: 1.5px solid rgba(255, 255, 255, 0.3);
+  background: rgba(15, 23, 42, 0.85);
+  color: #FFFFFF;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  font-weight: 600;
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: #FFFFFF;
+  color: #FFFFFF;
+  transform: translateY(-2px);
+}
+
+/* Responsive container */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 1.25rem;
+  }
+  .section-title {
+    font-size: 2rem;
+  }
+  section {
+    padding: 3rem 0;
+  }
+}
